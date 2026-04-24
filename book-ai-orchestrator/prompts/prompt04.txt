@@ -1,0 +1,69 @@
+Vamos a implementar la Fase 4.
+
+Objetivo:
+Mejorar el OrchestratorService para que cada agente reciba el contexto correcto acumulado del workflow.
+
+Contexto actual:
+Ya existe:
+- AgentClient
+- OpenAiAgentClient
+- AgentPromptFactory
+- AgentRole enum
+- OrchestratorService
+- WorkflowResponse
+- AgentStepResult
+
+Problema actual:
+Cada agente recibe solo un input simple, pero queremos que reciba el contexto generado por agentes anteriores.
+
+Nuevo flujo esperado:
+
+1. SPEC_AGENT recibe:
+   - task original
+
+2. DEVELOPER_AGENT recibe:
+   - task original
+   - output de SPEC_AGENT
+
+3. TEST_AGENT recibe:
+   - task original
+   - output de SPEC_AGENT
+   - output de DEVELOPER_AGENT
+
+4. REVIEWER_AGENT recibe:
+   - task original
+   - output de SPEC_AGENT
+   - output de DEVELOPER_AGENT
+   - output de TEST_AGENT
+
+5. FIX_AGENT recibe:
+   - task original
+   - output de SPEC_AGENT
+   - output de DEVELOPER_AGENT
+   - output de TEST_AGENT
+   - output de REVIEWER_AGENT
+
+Requisitos:
+1. Crear una clase WorkflowContext.
+2. WorkflowContext debe guardar:
+   - String originalTask
+   - Map<AgentRole, String> outputs
+3. Agregar métodos simples:
+   - addOutput(AgentRole role, String output)
+   - getOutput(AgentRole role)
+   - buildContextFor(AgentRole role)
+4. OrchestratorService debe usar WorkflowContext.
+5. AgentClient debe seguir recibiendo:
+   - AgentRole role
+   - String input
+6. No cambiar el endpoint público.
+7. No escribir archivos reales todavía.
+8. No ejecutar Maven desde código.
+9. Mantenerlo muy simple.
+
+Importante:
+- El output final debe seguir devolviendo todos los AgentStepResult.
+- Mantener compatibilidad con FakeAgentClient.
+- No agregar base de datos.
+- No agregar seguridad.
+- No agregar complejidad innecesaria.

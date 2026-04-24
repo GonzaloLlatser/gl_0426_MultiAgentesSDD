@@ -1,0 +1,39 @@
+Vamos a implementar la Fase 2 del proyecto.
+
+Objetivo:
+Reemplazar FakeAgentClient por OpenAiAgentClient usando Spring WebClient y OpenAI Responses API.
+
+Contexto:
+Ya existe:
+- AgentClient interface
+- FakeAgentClient
+- OrchestratorService
+- AgentRole enum
+- endpoint POST /orchestrator/run
+
+Requisitos:
+1. Crear OpenAiAgentClient que implemente AgentClient.
+2. Usar WebClient.
+3. Llamar a:
+   POST https://api.openai.com/v1/responses
+4. Enviar body:
+   {
+     "model": "gpt-5.2-mini",
+     "input": "<prompt>"
+   }
+5. Leer la respuesta como JSON y extraer output_text si existe.
+6. Si no existe output_text, devolver el JSON completo como fallback.
+7. Mantener FakeAgentClient para tests/local.
+8. Activar OpenAiAgentClient solo con profile "openai".
+9. Activar FakeAgentClient con profile "local" o por defecto.
+10. Agregar configuración en application.yml:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      model: gpt-5.2-mini
+
+Importante:
+- No modificar el flujo del OrchestratorService.
+- No agregar base de datos.
+- No agregar seguridad.
+- No agregar complejidad innecesaria.
+- Mantener todo simple y didáctico.

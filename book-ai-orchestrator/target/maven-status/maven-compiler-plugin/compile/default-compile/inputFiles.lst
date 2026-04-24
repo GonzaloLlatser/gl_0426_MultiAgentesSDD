@@ -1,0 +1,15 @@
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\agent\AgentClient.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\agent\AgentPromptFactory.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\agent\AgentRole.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\agent\FakeAgentClient.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\agent\OpenAiAgentClient.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\BookAiOrchestratorApplication.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\controller\OrchestratorController.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\dto\AgentStepResult.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\dto\AgentStructuredOutput.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\dto\FileChange.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\dto\TaskRequest.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\dto\WorkflowResponse.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\service\FileSystemService.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\service\OrchestratorService.java
+C:\Users\gouc\OneDrive - GFT Technologies SE\Formaciones GFT\SDD - Curso GFT\Proyectos de prueba\sdd-multiagentes\book-ai-orchestrator\src\main\java\com\example\bookaiorchestrator\service\WorkflowContext.java

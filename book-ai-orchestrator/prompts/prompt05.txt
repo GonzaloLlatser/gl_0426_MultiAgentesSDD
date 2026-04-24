@@ -1,0 +1,57 @@
+Vamos a implementar la Fase 5.
+
+Objetivo:
+Hacer que los agentes devuelvan respuestas estructuradas en JSON para que el orquestador pueda interpretarlas.
+
+Contexto:
+Ya existe:
+- AgentClient
+- OpenAiAgentClient
+- AgentPromptFactory
+- WorkflowContext
+- OrchestratorService
+- AgentRole
+- AgentStepResult
+
+Requisitos:
+1. Crear un DTO AgentStructuredOutput.
+2. Campos:
+   - String status
+   - String summary
+   - List<FileChange> fileChanges
+   - String nextAction
+3. Crear DTO FileChange con:
+   - String action
+   - String path
+   - String content
+4. Modificar AgentStepResult para guardar:
+   - AgentRole agent
+   - String rawOutput
+   - AgentStructuredOutput structuredOutput
+5. Actualizar AgentPromptFactory para pedir a cada agente que responda SIEMPRE en JSON válido.
+6. El JSON esperado debe ser:
+
+{
+  "status": "OK",
+  "summary": "Short explanation",
+  "fileChanges": [
+    {
+      "action": "CREATE",
+      "path": "src/main/java/example/BookController.java",
+      "content": "file content here"
+    }
+  ],
+  "nextAction": "CONTINUE"
+}
+
+7. OpenAiAgentClient debe intentar parsear la respuesta JSON con ObjectMapper.
+8. Si falla el parseo, debe guardar rawOutput y structuredOutput como null.
+9. No aplicar cambios en archivos todavía.
+10. No ejecutar Maven todavía.
+
+Importante:
+- Mantener compatibilidad con FakeAgentClient.
+- Mantener el endpoint POST /orchestrator/run.
+- No agregar base de datos.
+- No agregar seguridad.
+- Mantener el proyecto simple.

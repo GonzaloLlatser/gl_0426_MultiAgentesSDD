@@ -1,0 +1,75 @@
+Crear una clase FileSystemService.
+
+Responsabilidad:
+Aplicar cambios en archivos del sistema según FileChange.
+
+Requisitos:
+1. Método principal:
+   void applyChanges(List<FileChange> changes)
+
+2. Soportar acciones:
+   - CREATE → crea archivo (y carpetas si no existen)
+   - MODIFY → sobrescribe archivo existente
+
+3. Usar java.nio.file:
+   - Files.createDirectories
+   - Files.writeString
+
+4. Manejar errores de forma simple (try/catch y log)
+
+5. No agregar complejidad innecesaria
+
+Importante:
+- Mantener código simple
+- No usar librerías externas
+
+Modificar OrchestratorService.
+
+Objetivo:
+Después de cada agente, aplicar los cambios en archivos si existen.
+
+Requisitos:
+1. Inyectar FileSystemService
+
+2. Después de cada llamada a agentClient:
+   - Si structuredOutput != null
+   - Y fileChanges no está vacío
+   → llamar a fileSystemService.applyChanges(...)
+
+3. Mantener el flujo actual
+
+4. No ejecutar Maven todavía
+
+Importante:
+- No romper el flujo existente
+- Mantener compatibilidad con FakeAgentClient
+
+
+Modificar AgentPromptFactory.
+
+Objetivo:
+Que DEVELOPER_AGENT devuelva cambios reales de archivos en JSON.
+
+Para DEVELOPER_AGENT:
+
+Debe responder SIEMPRE en este formato:
+
+{
+  "status": "OK",
+  "summary": "Created basic controller",
+  "fileChanges": [
+    {
+      "action": "CREATE",
+      "path": "src/main/java/com/example/book/BookController.java",
+      "content": "package ... public class BookController {...}"
+    }
+  ],
+  "nextAction": "CONTINUE"
+}
+
+Reglas:
+- Código mínimo
+- Solo controller simple
+- No agregar capas extra
+- No usar base de datos
+- No usar seguridad

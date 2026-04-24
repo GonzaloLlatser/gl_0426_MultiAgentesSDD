@@ -1,0 +1,49 @@
+Quiero crear un proyecto laboratorio en Spring Boot para aprender multiagentes con OpenAI API.
+
+Nombre del proyecto: book-ai-orchestrator.
+
+Stack:
+- Java 21
+- Spring Boot 3
+- Maven
+- WebClient
+- JUnit 5
+- MockMvc
+
+Objetivo:
+Crear un orquestador de agentes de IA muy simple.
+
+Por ahora NO llames todavía a OpenAI.
+Por ahora NO escribas archivos del proyecto objetivo.
+Por ahora solo crea el esqueleto.
+
+Crea:
+1. OrchestratorController con endpoint POST /orchestrator/run
+2. OrchestratorService
+3. AgentClient interface
+4. FakeAgentClient que simule respuestas de agentes
+5. AgentRole enum con:
+   - SPEC_AGENT
+   - DEVELOPER_AGENT
+   - TEST_AGENT
+   - REVIEWER_AGENT
+   - FIX_AGENT
+6. DTOs:
+   - TaskRequest
+   - WorkflowResponse
+   - AgentStepResult
+
+El endpoint debe recibir:
+{
+  "task": "Crear endpoint POST /books/reserve que reciba title y userName"
+}
+
+Y debe devolver una respuesta con los pasos ejecutados por cada agente.
+
+Importante:
+- Mantén el código extremadamente simple.
+- No uses base de datos.
+- No uses seguridad.
+- No uses arquitectura hexagonal.
+- No agregues complejidad innecesaria.
+- Incluye un test MockMvc para POST /orchestrator/run.

@@ -1,0 +1,55 @@
+Vamos a implementar la Fase 3.
+
+Objetivo:
+Hacer que cada AgentRole tenga un prompt específico y útil.
+
+Contexto:
+Ya existe:
+- AgentClient
+- OpenAiAgentClient
+- AgentRole enum
+- OrchestratorService
+- POST /orchestrator/run
+
+Requisitos:
+1. Crear una clase AgentPromptFactory.
+2. Debe tener un método:
+   String buildPrompt(AgentRole role, String input)
+3. OpenAiAgentClient debe usar AgentPromptFactory.
+4. Cada agente debe tener una responsabilidad clara:
+
+SPEC_AGENT:
+- convierte la tarea en una mini spec SDD
+- no escribe código
+- devuelve Markdown breve
+
+DEVELOPER_AGENT:
+- recibe la spec
+- propone implementación mínima en Spring Boot
+- puede devolver nombres de archivos y código sugerido
+- no agrega complejidad
+
+TEST_AGENT:
+- recibe spec + implementación
+- propone tests mínimos con JUnit 5 y MockMvc
+
+REVIEWER_AGENT:
+- revisa si la implementación cumple la spec
+- detecta sobreingeniería
+- responde OK o ISSUES
+
+FIX_AGENT:
+- recibe issues del reviewer
+- propone correcciones mínimas
+
+5. Mantener el flujo actual del OrchestratorService.
+6. No escribir todavía archivos reales.
+7. No ejecutar Maven todavía.
+8. Solo mejorar la calidad de las respuestas por agente.
+
+Importante:
+- Mantener todo simple.
+- No agregar base de datos.
+- No agregar seguridad.
+- No usar arquitectura hexagonal.
+- No cambiar el endpoint.
